@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Modal Project</title>
 </head>
 <body>
-    
+    <main>
+        <div class="modal">
+            <h1>Modal Projects</h1>
+            <button id = "open">Click</button>
+        </div>
+        <div class="modal-overlay open">
+            <div class="container">
+                <i class="fa-solid fa-xmark" id ="close"></i>
+                <h1>Modal Projects</h1>
+            </div>    
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('open').addEventListener("click", show);
+        document.getElementById('close').addEventListener("click", show);
+        let mdl = document.querySelector(".modal");
+        let mdl_overlay = document.querySelector(".modal-overlay");
+        function show(){
+            mdl.classList.toggle("open");
+            mdl_overlay.classList.toggle("open");
+        }
+    </script>
 </body>
 </html>
