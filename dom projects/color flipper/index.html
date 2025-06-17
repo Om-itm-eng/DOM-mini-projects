@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Flipper || Simple</title>
+    <!-- css -->
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* nav-style */
+        nav{
+            height: 5em;
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(243, 237, 60, 0.246);
+            box-shadow: 0px 2px 7px black ;
+        }
+        nav div,h2{
+            margin: auto;
+            color: rgb(255, 115, 0);
+        }
+        .nav-items  a{
+            margin-left: 10px;
+            color: rgb(255, 115, 0);
+            text-decoration: none;
+        }
+
+        /* body-style */
+        main{
+            height: 100vh;
+        }
+
+        .main-container{
+            background-color: black;
+            width: 70vw;
+            height: 170px;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            position: absolute;
+            top: 20%;
+            left: 18%;
+            min-width: 350px;
+            
+        }
+
+        #box{
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        #colorName{
+            color:  rgb(255, 115, 0);
+        }
+
+        #btn{
+            height: 30%;
+            width: 40%;
+            background-color: rgb(255, 115, 0);
+            color: white;
+            font-size: 1.3em;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Color Flipper</h2>
+        <div class="nav-items">
+            <span><a href="index.html">Simple</a></span>
+            <span><a href="hex.html">Hex</a></span>
+        </div>
+    </nav>
+    <main>
+        <div class="main-container">
+            <h3 id="box">Background color: <span id="colorName">white</span></h3>
+            <button onclick="changeColor()" id="btn">Click Me</button>
+       </div>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function changeColor(){
+            let colors = ['aqua' , 'green', 'red', 'orange' , 'blue'];
+            let area = document.querySelector('main');
+            let colName = document.querySelector('#colorName');
+            let index = (Math.floor(Math.random()*10))%colors.length;
+            colName.innerHTML = colors[index];
+            area.style.backgroundColor = colors[index];
+        }
+    </script>
+</body>
+</html>

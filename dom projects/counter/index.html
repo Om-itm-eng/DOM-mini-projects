@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body{
+            background-color: rgb(212, 236, 245);
+        }
+
+        #container{
+            
+            margin-top: 10px;
+            text-align:center;
+            padding: 10px;
+
+            
+        }
+
+        #container  h1{
+            font-size: 5em;
+        }
+
+
+    </style>
+
+
+    <title>Counter</title>
+</head>
+<body>
+
+
+    <div id="container">
+        <h2>Counter</h2>
+        <h1 id="counter">0</h1>
+        <button onclick="Decrease()">Decrease</button>
+        <button onclick="Reset()">Reset</button>
+        <button onclick="Incerase()">Increase</button>
+    </div>
+    <script>
+        let num = document.querySelector('#counter');
+        function Decrease(){
+            let changed = (num.innerText*1)-1;
+            num.innerText = changed;
+            if(changed < 0)
+                num.style.color = 'red';
+            
+        }
+
+        function Reset(){
+            num.innerText = 0;
+            num.style.color = 'black';
+        }
+
+        function Incerase(){
+            let changed = (num.innerText*1)+1;
+            num.innerText = changed;
+            if(changed > 0)
+                num.style.color = 'green';
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family:  sans-serif;
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(243, 255, 255);
+        }
+
+        nav{
+            height: 50px;
+            box-shadow: 0px 1px 5px grey;
+            background-color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav  ul{
+            display: flex;
+            gap: 10px;
+            
+        }
+
+        nav ul li{
+            list-style-type: none;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .menu-icon{
+            font-size: 30px;
+            display: none;
+        }
+
+        @media (max-width : 500px) {
+            
+            .menu-icon{
+                display: block;    
+            }
+
+            nav ul{
+                position: absolute;
+                top: 70px;
+                left: 0px;
+                right: 0px;
+                display: block;
+                text-align: center;
+                background-color: white;
+                box-shadow: 0px 2px 2px grey;
+                overflow: hidden;
+                transition: all 0.5s ease-in-out;
+            }
+
+            nav ul li{
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+    
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1>logo</h1>
+        </div>
+        <ul class="menu-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" id="menu-toggle"></i>
+        </div>
+    </nav>
+
+    <script>
+        let menuList = document.querySelector(".menu-list");
+        let menuIcon = document.getElementById('menu-toggle');
+        menuList.style.maxHeight = '0px';
+        
+        menuIcon.addEventListener("click" , ()=>{
+            if(menuList.style.maxHeight === "0px"){
+                menuList.style.maxHeight = "500px";
+                menuIcon.style.transform = "rotate(-90deg)";
+                menuIcon.style.transition = "transform 0.5s ease-in-out";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+                menuIcon.style.transform= "unset";
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

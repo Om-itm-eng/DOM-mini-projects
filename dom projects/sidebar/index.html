@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SlideBar</title> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                font-family:  sans-serif;
+            }
+    
+            body{
+                height: 100%;
+                width: 100%;
+                background-color: rgb(243, 255, 255);
+                
+            }
+    
+            nav{
+                height: 50px;
+                box-shadow: 0px 1px 5px grey;
+                background-color: white;
+                padding: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+    
+            .menu-list{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                
+            }
+    
+            .menu-list li{
+                list-style-type: none;
+                padding: 20px;
+            }
+    
+            .menu-list li a{
+                text-decoration: none;
+                color: black;
+            }
+    
+            .menu-icon{
+                font-size: 30px;
+                
+            }
+
+            .social-media-icons {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .social-media-icons div{
+                font-size: 20px;
+                display: flex;
+                gap: 7px;
+                position: absolute;
+                bottom: 10px;
+            }
+
+            .logo{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+            }
+            
+
+            aside{
+                background-color: aqua;
+                width: 400px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                min-height: 450px;
+                display: flex;
+                flex-direction: column;
+                align-content:space-around ;
+                gap: 20px;
+                transform: translateX(-100%);
+                transition: all 0.5s ease-in-out;
+            }
+
+            /*.active is a class that will added dynamically */
+            aside.active {
+                transform: translateX(0);
+            }
+   
+            @media (max-width : 500px) {
+                
+                aside{
+                    width: 100%;
+                }
+
+    
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <h1>logo</h1>
+            </div>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars" id="menu-toggle"></i>
+            </div>
+        </nav>
+        <aside>
+            <div class="logo">
+                <h1>logo</h1>
+                <h3 onclick="sidebarToggle()"><i class="fa-solid fa-xmark"></i></h3>
+            </div>
+            <ul class="menu-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="social-media-icons">
+                <div>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+        </aside>
+        <script>
+            let sidebar = document.querySelector("aside");
+            let menuIcon = document.getElementById('menu-toggle');
+
+            function sidebarToggle() {
+                sidebar.classList.toggle('active');
+                
+            }
+            //toggle working
+            //Toggle method add given class if not preset in classList
+            //if already preset then remove it.
+            menuIcon.addEventListener("click" , sidebarToggle);
+            
+        </script>
+    </body>
+
+</html>
+
