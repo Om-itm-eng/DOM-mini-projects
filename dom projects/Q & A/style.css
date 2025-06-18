@@ -63,6 +63,7 @@ main{
 .question{
     display: flex;
     justify-content: space-between;
+    gap: 5px;
     padding: 1.5rem;
 }
 
@@ -75,8 +76,4 @@ main{
 
 .hide{
     display: none;
-}
-
-.show{
-    display: block;
 }
